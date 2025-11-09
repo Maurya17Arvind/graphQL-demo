@@ -1,21 +1,21 @@
 <main class="app">
-  <section class="panel panel--left">
-    <header class="panel__header">
+  <section class="card panel--left overflow-auto p-3">
+    <header>
       <h2>Posts</h2>
       <p class="muted">Lista de posts (id · title)</p>
     </header>
 
-    <div class="table-wrap">
-      <table class="posts-table" aria-describedby="posts-description">
+    <div class="table">
+      <table aria-describedby="posts-description">
         <caption id="posts-description" class="visually-hidden">
           Tabla de posts con acciones
         </caption>
         <thead>
           <tr>
-            <th class="col-id">ID</th>
-            <th class="col-title">Title</th>
-            <th class="col-title">Body</th>
-            <th class="col-action">Action</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -43,25 +43,24 @@
       <h2>Create / Edit Post</h2>
       <p class="muted">Rellena el título y presiona Save</p>
     </header>
-
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="post-form" novalidate>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <input type="hidden" formControlName="id" />
-
-      <label class="form-row">
-        <span class="label">Title</span>
-        <input formControlName="title" type="text" placeholder="Enter post title" />
-      </label>
-       <label class="form-row">
-        <span class="label">Body</span>
-        <input formControlName="body" type="text" placeholder="Enter post body" />
-      </label>
-
-      <div class="form-actions">
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-ghost" (click)="reset()">Reset</button>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          formControlName="title"
+          class="form-control"
+          id="title"
+          aria-describedby="titleHelp"
+        />
       </div>
+      <div class="mb-3">
+        <label for="body" class="form-label">Body</label>
+        <input formControlName="body" class="form-control" id="body" />
+      </div>
+      <button type="submit" class="btn btn-primary me-2">Submit</button>
+      <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
     </form>
-
     <div class="note">
       Tip: Click <strong>edit</strong> to load a post in the form. Click <strong>delete</strong> to
       remove it.

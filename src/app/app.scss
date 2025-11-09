@@ -14,16 +14,6 @@ $radius: 10px;
   padding: 16px;
 }
 
-.panel {
-  background: $card;
-  border-radius: $radius;
-  padding: $panel-padding;
-  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-}
-
 .panel--left {
   flex: 1 1 60%;
   min-width: 320px;
@@ -33,54 +23,12 @@ $radius: 10px;
   min-width: 280px;
 }
 
-.posts-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 420px;
-}
-
-.posts-table thead th {
-  text-align: left;
-  font-size: 0.85rem;
-  padding: 12px 14px;
-  border-bottom: 1px solid #e6e9ef;
-}
-
-.posts-table tbody td {
-  padding: 10px 14px;
-  border-bottom: 1px solid #f1f3f6;
-}
-
 .icon-btn {
   background: transparent;
   border: none;
   padding: 6px;
   margin-right: 6px;
   cursor: pointer;
-}
-
-.btn {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-}
-.btn-primary {
-  background: $accent;
-  color: white;
-}
-.btn-ghost {
-  background: transparent;
-  border-color: #d1d5db;
-}
-
-.post-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.form-row {
-  display: flex;
-  flex-direction: column;
 }
 
 .empty {
